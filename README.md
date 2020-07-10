@@ -26,9 +26,9 @@ Select ```File``` -> ```Open``` -> ```Project/Solution```
 
 Next navigate to the location you cloned the Repository.
 
-Double click on the ```lab04tictactoe``` directory.
+Double click on the ```Lab 04 Tic Tac Toe Round 2``` directory.
 
-Then select and open ```lab04tictactoe.sln```
+Then select and open ```Lab 04 Tic Tac Toe Round 2.sln```
 
 ---
 //Pending
