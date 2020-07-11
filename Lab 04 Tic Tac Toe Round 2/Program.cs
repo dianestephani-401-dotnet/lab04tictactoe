@@ -10,11 +10,13 @@ namespace Lab04_TicTacToe
             StartGame();
         }
 
+        /// <summary>
+        /// Sets up and starts the game, then shows winner
+        /// </summary>
         static void StartGame()
         {
-            // TODO: Setup your game. Create a new method that creates your players and instantiates the game class. Call that method in your Main method.
-            // You are requesting a Winner to be returned, Determine who the winner is output the celebratory message to the correct player. If it's a draw, tell them that there is no winner. 
-
+            Console.WriteLine("Let's play some Tic-Tac-Toe!");
+            
             Console.WriteLine("Please enter the name of Player 1");
             string playerOneName = Console.ReadLine();
             Console.WriteLine("Please enter the name of Player 2");
@@ -24,6 +26,9 @@ namespace Lab04_TicTacToe
             Player playerTwo = new Player();
             playerOne.Name = playerOneName;
             playerTwo.Name = playerTwoName;
+            playerOne.Marker = "X";
+            playerTwo.Marker = "O";
+            playerOne.IsTurn = true;
 
             Game game = new Game(playerOne, playerTwo);
             Player winner = game.Play();
@@ -31,9 +36,10 @@ namespace Lab04_TicTacToe
             {
                 Console.WriteLine($"{winner.Name} is the winner! Congratulations!");
             }
+            else
+            {
+                Console.WriteLine("Draw! No winner.");
+            }
         }
-
-
-
     }
 }
