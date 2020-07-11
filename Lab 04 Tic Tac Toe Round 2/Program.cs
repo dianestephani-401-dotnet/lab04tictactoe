@@ -24,6 +24,9 @@ namespace Lab04_TicTacToe
             Player playerTwo = new Player();
             playerOne.Name = playerOneName;
             playerTwo.Name = playerTwoName;
+            playerOne.Marker = "X";
+            playerTwo.Marker = "O";
+            playerOne.IsTurn = true;
 
             Game game = new Game(playerOne, playerTwo);
             Player winner = game.Play();

@@ -50,14 +50,23 @@ namespace TicTacToe_Unit_Test
             Assert.True(position.Row == 0 && position.Column == 0);
         }
 
-        [Fact]
-        public void TestPlayerName()
+        [Theory]
+        [InlineData(0, 0, "1")]
+        [InlineData(0, 1, "2")]
+        [InlineData(0, 2, "3")]
+        [InlineData(1, 0, "4")]
+        [InlineData(1, 1, "5")]
+        [InlineData(1, 2, "6")]
+        [InlineData(2, 0, "7")]
+        [InlineData(2, 1, "8")]
+        [InlineData(2, 2, "9")]
+        public void TestBoardSetCorrectly(int row, int col, string pos)
         {
             Player playerOne = new Player();
             Player playerTwo = new Player();
-            playerOne.Marker = "x";
-            playerTwo.Marker = "o";
             Game game = new Game(playerOne, playerTwo);
+
+            Assert.Equal(pos, game.Board.GameBoard[row, col]);
         }
     }
 }

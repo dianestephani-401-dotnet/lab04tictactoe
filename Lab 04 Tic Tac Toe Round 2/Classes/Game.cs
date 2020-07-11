@@ -11,7 +11,6 @@ namespace Lab04_TicTacToe.Classes
 		public Player Winner { get; set; }
 		public Board Board { get; set; }
 
-
 		/// <summary>
 		/// Require 2 players and a board to start a game. 
 		/// </summary>
@@ -33,7 +32,7 @@ namespace Lab04_TicTacToe.Classes
 
 			//TODO: Complete this method and utilize the rest of the class structure to play the game.
 
-            /*
+			/*
              * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
              * 
              * A few things to get you started:
@@ -48,8 +47,32 @@ namespace Lab04_TicTacToe.Classes
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
 
-			Console.WriteLine("Enter the number for the corresponding position of your choice.");
-			Board.DisplayBoard();
+			bool winnerFound = false;
+
+			while(!winnerFound)
+            {
+				Board.DisplayBoard();
+
+				// Player inputs position on board (need to check if it's a valid position)
+				// Player's marker is put on the board
+				// Game checks for winner
+				// If winner, then return current player
+				// If no winner, then switch player
+
+				// string input = Console.ReadLine();
+				NextPlayer().TakeTurn(Board);
+				winnerFound = CheckForWinner(Board);
+				if (winnerFound) // if method returns 'true'
+				{
+					Winner = NextPlayer();
+					return Winner;
+				}
+				else
+				{
+					SwitchPlayer();
+				}
+			}
+
 			return null;
 		}
 
@@ -88,6 +111,7 @@ namespace Lab04_TicTacToe.Classes
 
 				// TODO:  Determine a winner has been reached. 
 				// return true if a winner has been reached. 
+				if (a == b && b == c) return true;
 			
 			}
 
