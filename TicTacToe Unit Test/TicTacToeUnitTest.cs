@@ -6,6 +6,10 @@ namespace TicTacToe_Unit_Test
 {
     public class TicTacToeUnitTest
     {
+        
+        /// <summary>
+        /// Tests if winner is checked correctly
+        /// </summary>
         [Fact]
         public void TestForWinners()
         {
@@ -23,6 +27,9 @@ namespace TicTacToe_Unit_Test
             Assert.True(winnerCheck);
         }
 
+        /// <summary>
+        /// Tests if players switch correctly
+        /// </summary>
         [Fact]
         public void TestForPlayerSwitch()
         {
@@ -38,6 +45,9 @@ namespace TicTacToe_Unit_Test
 
         }
 
+        /// <summary>
+        /// Tests if given input returns the correct position
+        /// </summary>
         [Fact]
         public static void TestInputAndPosition()
         {
@@ -50,6 +60,12 @@ namespace TicTacToe_Unit_Test
             Assert.True(position.Row == 0 && position.Column == 0);
         }
 
+        /// <summary>
+        /// Tests if board is set correctly
+        /// </summary>
+        /// <param name="row">Row of the board to check</param>
+        /// <param name="col">Column of the board to check</param>
+        /// <param name="pos">Position on the board specified</param>
         [Theory]
         [InlineData(0, 0, "1")]
         [InlineData(0, 1, "2")]
