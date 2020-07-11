@@ -36,6 +36,10 @@ namespace Lab04_TicTacToe
             {
                 Console.WriteLine($"{winner.Name} is the winner! Congratulations!");
             }
+            else
+            {
+                Console.WriteLine("Draw! No winner.");
+            }
         }
     }
 }

@@ -29,7 +29,8 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-			while(true)
+			int rounds = 9;
+			for(int i = 0; i < rounds; i++)
             {
 				Board.DisplayBoard();
 
@@ -45,6 +46,9 @@ namespace Lab04_TicTacToe.Classes
 					SwitchPlayer();
 				}
 			}
+
+			Board.DisplayBoard();
+			return null;
 		}
 
 		/// <summary>
