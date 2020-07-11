@@ -35,9 +35,9 @@ Then select and open ```Lab 04 Tic Tac Toe Round 2.sln```
 ### Visuals
 
 #### Application Start
-![Image 1](image)
+![Image 1](image (1).png)
 #### Using the Application
-![Image 1](image1)
+![Image 1](image.png)
 
 ---
 
