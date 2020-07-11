@@ -30,20 +30,24 @@ namespace Lab04_TicTacToe.Classes
 		public Player Play()
 		{
 			int rounds = 9;
-			for(int i = 0; i < rounds; i++)
+			
+			while(rounds > 0)
             {
 				Board.DisplayBoard();
-
-				NextPlayer().TakeTurn(Board);
-				if (CheckForWinner(Board))
-				{
-					Board.DisplayBoard();
-					Winner = NextPlayer();
-					return Winner;
-				}
-				else
-				{
-					SwitchPlayer();
+				
+				if(NextPlayer().TakeTurn(Board))
+                {
+					if (CheckForWinner(Board))
+					{
+						Board.DisplayBoard();
+						Winner = NextPlayer();
+						return Winner;
+					}
+					else
+					{
+						SwitchPlayer();
+						rounds--;
+					}
 				}
 			}
 

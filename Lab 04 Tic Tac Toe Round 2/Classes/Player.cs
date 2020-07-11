@@ -62,7 +62,7 @@ namespace Lab04_TicTacToe.Classes
 		/// Sets player's turn, gets their input, and puts their marker on the board
 		/// </summary>
 		/// <param name="board"></param>
-		public void TakeTurn(Board board)
+		public bool TakeTurn(Board board)
 		{
 			IsTurn = true;
 
@@ -73,10 +73,12 @@ namespace Lab04_TicTacToe.Classes
 			if (Int32.TryParse(board.GameBoard[position.Row, position.Column], out int _))
 			{
 				board.GameBoard[position.Row, position.Column] = Marker;
+				return true;
 			}
 			else
 			{
 				Console.WriteLine("This space is already occupied");
+				return false;
 			}
 		}
 	}
